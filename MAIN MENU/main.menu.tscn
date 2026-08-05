@@ -1,0 +1,90 @@
+[gd_scene format=3 uid="uid://drhfy113q0qn7"]
+
+[ext_resource type="Script" uid="uid://373evwplh50w" path="res://MAIN MENU/main_menu.gd" id="1_n28pa"]
+[ext_resource type="Texture2D" uid="uid://vebcfek83ro3" path="res://GAME/sprites/wmremove-transformed.png" id="2_m2akn"]
+[ext_resource type="FontFile" uid="uid://cu187lwcsx46p" path="res://Godot-Fontpack-d244bf6170b399a6d4d26a0d906058ddf2dafdf1/Godot-Fontpack-d244bf6170b399a6d4d26a0d906058ddf2dafdf1/fonts/poco/Poco.ttf" id="3_sxt2w"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_57qmd"]
+
+[sub_resource type="ImageTexture" id="ImageTexture_yf5fn"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yf5fn"]
+
+[node name="MAIN MENU" type="Node2D" unique_id=2050672380]
+
+[node name="Main menu" type="Control" parent="." unique_id=2009442987]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1150.0
+offset_bottom = 650.0
+script = ExtResource("1_n28pa")
+
+[node name="WmremoveTransformed" type="Sprite2D" parent="Main menu" unique_id=343873881]
+position = Vector2(579.75, 324.5)
+scale = Vector2(0.95941424, 0.72209823)
+texture = ExtResource("2_m2akn")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Main menu" unique_id=984581058]
+layout_mode = 0
+offset_left = 3.0
+offset_right = 1150.0
+offset_bottom = 642.0
+
+[node name="SettingsButton" type="Button" parent="Main menu" unique_id=912842036]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 403.0
+offset_right = 231.0
+offset_bottom = 450.0
+theme_override_fonts/font = ExtResource("3_sxt2w")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxEmpty_57qmd")
+text = "SETTINGS
+"
+
+[node name="TextureRect" type="TextureRect" parent="Main menu" unique_id=64946127]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 646.0
+texture = SubResource("ImageTexture_yf5fn")
+
+[node name="StartButton" type="Button" parent="Main menu" unique_id=1088898033]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 314.0
+offset_right = 231.0
+offset_bottom = 362.0
+theme_override_fonts/font = ExtResource("3_sxt2w")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxEmpty_yf5fn")
+text = "START
+"
+
+[node name="Label" type="Label" parent="Main menu" unique_id=385881597]
+layout_mode = 0
+offset_left = 327.0
+offset_top = 11.0
+offset_right = 774.0
+offset_bottom = 254.0
+theme_override_colors/font_outline_color = Color(0.5595232, 1.2754649e-06, 3.3691526e-07, 1)
+theme_override_fonts/font = ExtResource("3_sxt2w")
+theme_override_font_sizes/font_size = 100
+text = "MAIN HALL
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="Main menu" unique_id=735738197]
+layout_mode = 0
+offset_left = 362.0
+offset_top = 125.0
+offset_right = 744.0
+offset_bottom = 342.0
+theme_override_colors/font_outline_color = Color(0.40050432, 0.011333661, 2.4065375e-08, 1)
+theme_override_fonts/font = ExtResource("3_sxt2w")
+theme_override_font_sizes/font_size = 55
+text = "ᜋᜁᜈ᜕ ᜑᜎ᜕ᜎ᜕
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
