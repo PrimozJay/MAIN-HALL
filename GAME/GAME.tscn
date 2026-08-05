@@ -331,14 +331,13 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_g4v7s"]
-radius = 30.675724
+radius = 27.018513
 
 [node name="Game" type="Node2D" unique_id=771411987]
 
 [node name="MAP" type="Node2D" parent="." unique_id=1998576482]
 
 [node name="CanvasModulate" type="CanvasModulate" parent="MAP" unique_id=225175958]
-visible = false
 position = Vector2(1, 1)
 color = Color(0.078431375, 0.078431375, 0.12156863, 1)
 
@@ -367,24 +366,20 @@ collision_layer = 255
 [node name="CollisionShape2D" type="CollisionShape2D" parent="MAP/Wall" unique_id=2128122987]
 position = Vector2(17, 324)
 shape = SubResource("RectangleShape2D_g4v7s")
-one_way_collision = true
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="MAP/Wall" unique_id=1786875410]
 position = Vector2(1157, 327)
 shape = SubResource("RectangleShape2D_g4v7s")
-one_way_collision = true
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="MAP/Wall" unique_id=797071320]
 position = Vector2(583, 21.249998)
 rotation = 1.5707964
 shape = SubResource("RectangleShape2D_21cii")
-one_way_collision = true
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="MAP/Wall" unique_id=1488975460]
 position = Vector2(593, 648)
 rotation = 1.5707964
 shape = SubResource("RectangleShape2D_0opqf")
-one_way_collision = true
 
 [node name="Key1" type="Sprite2D" parent="MAP" unique_id=2081501110]
 position = Vector2(768, 466)
@@ -402,31 +397,29 @@ texture = ExtResource("14_0l4hx")
 position = Vector2(-8, 5)
 
 [node name="Player" type="CharacterBody2D" parent="Player" unique_id=1386968329]
-position = Vector2(588, 350)
+position = Vector2(608, 488)
 script = ExtResource("1_a4nc1")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player/Player" unique_id=1850299160]
-position = Vector2(19.000015, 83)
+position = Vector2(-0.99998474, -0.9999771)
 scale = Vector2(0.53906274, 0.38541675)
 sprite_frames = SubResource("SpriteFrames_57qmd")
-animation = &"down"
+animation = &"up"
 autoplay = "down"
-frame = 2
-frame_progress = 0.04860711
+frame_progress = 0.5746724
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player/Player" unique_id=1193555343]
-visible = false
-position = Vector2(931, 83)
+position = Vector2(0, -1)
 shape = SubResource("CircleShape2D_g4v7s")
 
 [node name="Camera2D" type="Camera2D" parent="Player/Player" unique_id=1039154974]
-position = Vector2(2, -22)
+position = Vector2(-1, 0)
 
 [node name="Flashlight" type="PointLight2D" parent="Player/Player" unique_id=281798778]
-position = Vector2(112, 92.000015)
 scale = Vector2(0.111816406, 0.05605468)
 color = Color(1, 0.9490196, 0.8, 1)
 energy = 1.5
 texture = ExtResource("2_13f1k")
-texture_scale = 2.5
+offset = Vector2(1582.9519, 0)
+texture_scale = 6.24
 script = ExtResource("2_6lujh")
