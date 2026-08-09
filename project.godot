@@ -19,11 +19,17 @@ config/icon="res://icon.svg"
 
 Global="*uid://tmfpltu0cqaj"
 TransitionManager="*uid://bvaj8lm784uq8"
+Inventory="*uid://c12oehebjjbh1"
+InteractPrompt="*uid://bdlqn575woerj"
 
 [display]
 
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
+
+[global_group]
+
+Player=""
 
 [input]
 

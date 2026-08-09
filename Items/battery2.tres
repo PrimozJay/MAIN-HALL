@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://c0np0ei5xkyer"]
+
+[ext_resource type="Texture2D" uid="uid://dhwptih2pryva" path="res://GAME/map layer/battery_32.png" id="1_hxdrw"]
+[ext_resource type="Script" uid="uid://cstcoclhq05j5" path="res://GAME/item_data.gd" id="1_xpsr6"]
+
+[resource]
+script = ExtResource("1_xpsr6")
+id = "b00002"
+item_name = "battery2"
+icon = ExtResource("1_hxdrw")
+metadata/_custom_type_script = "uid://cstcoclhq05j5"

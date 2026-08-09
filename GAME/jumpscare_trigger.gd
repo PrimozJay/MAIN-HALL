@@ -12,7 +12,9 @@ func _ready() -> void:
 	hide_timer.timeout.connect(_on_timer_timeout)
 
 func _on_body_entered(body: Node2D) -> void:
-	if body is CharacterBody2D and not triggered:
+	if triggered:
+		return
+	if body.is_in_group("player"):
 		triggered = true
 		jumpscare_rect.visible = true
 		jumpscare_sound.play()

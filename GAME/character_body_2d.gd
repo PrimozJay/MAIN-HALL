@@ -11,21 +11,29 @@ var player: CharacterBody2D
 var flashlight: PointLight2D
 var can_attack: bool = true
 
-@onready var sprite = $AnimatedSprite2D
-@onready var nav_agent = $NavigationAgent2D
+@onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
+@onready var nav_agent: NavigationAgent2D = $NavigationAgent2D
 
-func _ready():
-	player = get_tree().get_first_node_in_group("player")
+func _ready() -> void:
+	player = get_tree().get_first_node_in_group("Player")
+	if player == null:
+		push_error("Monster '%s' could not find a node in group 'player'" % name)
+		set_physics_process(false)
+		return
+	if not player.has_node("Flashlight"):
+		push_error("Monster '%s': player has no 'Flashlight' node" % name)
+		set_physics_process(false)
+		return
 	flashlight = player.get_node("Flashlight")
 	nav_agent.path_desired_distance = 4.0
 	nav_agent.target_desired_distance = 4.0
 
-func _physics_process(_delta):
+func _physics_process(_delta: float) -> void:
 	if player == null:
 		return
 
-	var dir = Vector2.ZERO
-	var distance_to_player = global_position.distance_to(player.global_position)
+	var dir := Vector2.ZERO
+	var distance_to_player := global_position.distance_to(player.global_position)
 
 	if is_lit_by_flashlight():
 		velocity = Vector2.ZERO
@@ -42,7 +50,7 @@ func _physics_process(_delta):
 	move_and_slide()
 	_update_animation(dir)
 
-func _try_attack():
+func _try_attack() -> void:
 	if not can_attack:
 		return
 	can_attack = false

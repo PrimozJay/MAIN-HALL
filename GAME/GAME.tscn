@@ -2,10 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://b6f3go6juh20d" path="res://GAME/map layer/cream_map_tiles.png" id="1_8rc2e"]
 [ext_resource type="Script" uid="uid://cyfqm44t70ij7" path="res://GAME/game.gd" id="1_61eop"]
-[ext_resource type="Script" uid="uid://crobin20nx85l" path="res://GAME/player.gd" id="1_a4nc1"]
 [ext_resource type="Texture2D" uid="uid://144bemfns14q" path="res://GAME/map layer/wall_eeeee4.png" id="2_5kg2u"]
-[ext_resource type="Script" uid="uid://2qvu3ovcyku0" path="res://GAME/flashlight.gd" id="2_6lujh"]
-[ext_resource type="Texture2D" uid="uid://cwqlh5waegg2e" path="res://GAME/flashlight_cone.png" id="2_13f1k"]
 [ext_resource type="Texture2D" uid="uid://buaa60ymu622e" path="res://GAME/map layer/desk_chair_small.png" id="4_2en3r"]
 [ext_resource type="Texture2D" uid="uid://bp5i65eymbxm6" path="res://GAME/map layer/darkgrey_tile.png" id="5_21cii"]
 [ext_resource type="Texture2D" uid="uid://cr56bqk5b6xap" path="res://GAME/map layer/door_open_spritesheet.png" id="6_0opqf"]
@@ -17,10 +14,8 @@
 [ext_resource type="Texture2D" uid="uid://dwqlm3vnybg6s" path="res://GAME/map layer/maroon_tile (1).png" id="8_xdrc5"]
 [ext_resource type="Texture2D" uid="uid://hrw87c3podth" path="res://GAME/map layer/black_chair_small.png" id="9_8ws6v"]
 [ext_resource type="Texture2D" uid="uid://c15syx3i8cc1j" path="res://GAME/map layer/stairs_verybig-removebg-preview.png" id="9_21cii"]
-[ext_resource type="Texture2D" uid="uid://drfngmg7nlqns" path="res://GAME/sprites/spritesheet_up_4frame.png" id="16_0l4hx"]
-[ext_resource type="Texture2D" uid="uid://dkpr4vh5dwu88" path="res://GAME/sprites/spritesheet_side_fullbody.png" id="17_xdrc5"]
-[ext_resource type="Texture2D" uid="uid://xx5e6elch1b2" path="res://GAME/sprites/spritesheet_front_4frame (1).png" id="18_8ws6v"]
 [ext_resource type="Script" uid="uid://c4yx32hvlnhxh" path="res://GAME/jumpscare_trigger.gd" id="22_u82d7"]
+[ext_resource type="PackedScene" uid="uid://byque4w54oowj" path="res://Player/player.tscn" id="23_8ws6v"]
 [ext_resource type="Texture2D" uid="uid://bilcuhg2g5ekd" path="res://GAME/map layer/jumpscare_face (1).png" id="23_tcjcw"]
 [ext_resource type="AudioStream" uid="uid://ccdp7ac7oiwg0" path="res://sounds/jumpscare-sound_L63DbPEO.mp3" id="24_61eop"]
 [ext_resource type="Script" uid="uid://of0dx1dwxxgt" path="res://GAME/character_body_2d.gd" id="25_0bbdc"]
@@ -256,104 +251,6 @@ size = Vector2(40.250004, 1118)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0opqf"]
 size = Vector2(22, 1118)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_u82d7"]
-atlas = ExtResource("16_0l4hx")
-region = Rect2(0, 0, 128, 128)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_tcjcw"]
-atlas = ExtResource("16_0l4hx")
-region = Rect2(128, 0, 128, 128)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_61eop"]
-atlas = ExtResource("16_0l4hx")
-region = Rect2(256, 0, 128, 128)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ll0nm"]
-atlas = ExtResource("16_0l4hx")
-region = Rect2(384, 0, 128, 128)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_0bbdc"]
-atlas = ExtResource("17_xdrc5")
-region = Rect2(0, 0, 128, 128)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_xl8yf"]
-atlas = ExtResource("17_xdrc5")
-region = Rect2(128, 0, 128, 128)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_h6ano"]
-atlas = ExtResource("17_xdrc5")
-region = Rect2(256, 0, 128, 128)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_gpwe2"]
-atlas = ExtResource("18_8ws6v")
-region = Rect2(0, 0, 128, 128)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_70f7l"]
-atlas = ExtResource("18_8ws6v")
-region = Rect2(128, 0, 128, 128)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_sqcw2"]
-atlas = ExtResource("18_8ws6v")
-region = Rect2(256, 0, 128, 128)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_mjab8"]
-atlas = ExtResource("18_8ws6v")
-region = Rect2(384, 0, 128, 128)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_57qmd"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_u82d7")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_tcjcw")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_61eop")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ll0nm")
-}],
-"loop": 1,
-"name": &"down",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_0bbdc")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_xl8yf")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_h6ano")
-}],
-"loop": 1,
-"name": &"side",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_gpwe2")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_70f7l")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_sqcw2")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_mjab8")
-}],
-"loop": 1,
-"name": &"up",
-"speed": 5.0
-}]
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_g4v7s"]
-radius = 27.018513
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_57qmd"]
 size = Vector2(80, 20)
 
@@ -469,15 +366,16 @@ radius = 30.016663
 script = ExtResource("1_61eop")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=139602732]
-offset_left = -855.0
-offset_top = -656.0
-offset_right = 2236.0
-offset_bottom = 1450.0
+offset_left = -1000.0
+offset_top = -587.0
+offset_right = 2091.0
+offset_bottom = 1519.0
 color = Color(0, 0, 0, 1)
 
 [node name="MAP" type="Node2D" parent="." unique_id=1998576482]
 
 [node name="CanvasModulate" type="CanvasModulate" parent="MAP" unique_id=225175958]
+visible = false
 position = Vector2(1, 1)
 color = Color(0.078431375, 0.078431375, 0.12156863, 1)
 
@@ -519,37 +417,6 @@ shape = SubResource("RectangleShape2D_21cii")
 position = Vector2(593, 648)
 rotation = 1.5707964
 shape = SubResource("RectangleShape2D_0opqf")
-
-[node name="Player" type="Node2D" parent="." unique_id=1003299124]
-position = Vector2(-8, 5)
-
-[node name="Player" type="CharacterBody2D" parent="Player" unique_id=1386968329]
-position = Vector2(608, 488)
-script = ExtResource("1_a4nc1")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player/Player" unique_id=1850299160]
-position = Vector2(-1.0000088, 6.500004)
-scale = Vector2(1.0781248, 1.1640626)
-sprite_frames = SubResource("SpriteFrames_57qmd")
-animation = &"down"
-autoplay = "up"
-frame_progress = 0.44377303
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Player/Player" unique_id=1193555343]
-position = Vector2(0, -1)
-shape = SubResource("CircleShape2D_g4v7s")
-
-[node name="Camera2D" type="Camera2D" parent="Player/Player" unique_id=1039154974]
-position = Vector2(-1, 0)
-
-[node name="Flashlight" type="PointLight2D" parent="Player/Player" unique_id=281798778]
-scale = Vector2(0.111816406, 0.05605468)
-color = Color(1, 0.9490196, 0.8, 1)
-energy = 1.5
-texture = ExtResource("2_13f1k")
-offset = Vector2(1582.9519, 0)
-texture_scale = 6.24
-script = ExtResource("2_6lujh")
 
 [node name="SpawnPoint" type="Marker2D" parent="." unique_id=712355863]
 position = Vector2(596, 450)
@@ -605,3 +472,5 @@ animation = &"down"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Monster/Monster" unique_id=1626408691]
 position = Vector2(78, 528)
 shape = SubResource("CircleShape2D_yf5fn")
+
+[node name="Player" parent="." unique_id=1933232573 instance=ExtResource("23_8ws6v")]
