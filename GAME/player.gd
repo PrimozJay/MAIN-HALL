@@ -1,19 +1,19 @@
 extends CharacterBody2D
-
 const SPEED = 100.0
 const MOUSE_SENSITIVITY = 0.005
-
 @onready var flashlight: PointLight2D = $Flashlight
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
-
 var flashlight_on = true
 var flashlight_angle: float = 0.0
-var virtual_mouse_offset: Vector2 = Vector2.RIGHT  # arbitrary starting direction
+var virtual_mouse_offset: Vector2 = Vector2.RIGHT
 
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	# make sure this node is in the "player" group for teleporters to detect it
+	if not is_in_group("player"):
+		add_to_group("player")
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	var input_dir = Input.get_vector("move_left", "move_right", "move_up", "move_down")
 	velocity = input_dir * SPEED
 	move_and_slide()

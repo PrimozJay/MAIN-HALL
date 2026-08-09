@@ -1,5 +1,6 @@
 [gd_scene format=4 uid="uid://ctx4rwfvdrv3w"]
 
+[ext_resource type="Script" uid="uid://b8fj1tl5dd84t" path="res://GAME/floor/2ndfloor/2_ndfloor.gd" id="1_a10ry"]
 [ext_resource type="Texture2D" uid="uid://b6f3go6juh20d" path="res://GAME/map layer/cream_map_tiles.png" id="1_ucdhe"]
 [ext_resource type="Texture2D" uid="uid://144bemfns14q" path="res://GAME/map layer/wall_eeeee4.png" id="2_tj7hs"]
 [ext_resource type="Texture2D" uid="uid://cr56bqk5b6xap" path="res://GAME/map layer/door_open_spritesheet.png" id="3_hmch8"]
@@ -9,6 +10,13 @@
 [ext_resource type="Texture2D" uid="uid://c15syx3i8cc1j" path="res://GAME/map layer/stairs_verybig-removebg-preview.png" id="7_hrdek"]
 [ext_resource type="Texture2D" uid="uid://dhwptih2pryva" path="res://GAME/map layer/battery_32.png" id="8_hmch8"]
 [ext_resource type="Texture2D" uid="uid://b2my24vthadjl" path="res://GAME/map layer/key_32.png" id="9_2mjx2"]
+[ext_resource type="Script" uid="uid://pb7cq4acf58u" path="res://GAME/floor/2ndfloor/teleporter.gd" id="11_km2in"]
+[ext_resource type="Script" uid="uid://crobin20nx85l" path="res://GAME/player.gd" id="12_wsdul"]
+[ext_resource type="Texture2D" uid="uid://drfngmg7nlqns" path="res://GAME/sprites/spritesheet_up_4frame.png" id="13_wsdul"]
+[ext_resource type="Texture2D" uid="uid://dkpr4vh5dwu88" path="res://GAME/sprites/spritesheet_side_fullbody.png" id="14_e2axb"]
+[ext_resource type="Texture2D" uid="uid://xx5e6elch1b2" path="res://GAME/sprites/spritesheet_front_4frame (1).png" id="15_6roet"]
+[ext_resource type="Texture2D" uid="uid://cwqlh5waegg2e" path="res://GAME/flashlight_cone.png" id="16_f8it0"]
+[ext_resource type="Script" uid="uid://2qvu3ovcyku0" path="res://GAME/flashlight.gd" id="17_e36cs"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yv20p"]
 texture = ExtResource("2_tj7hs")
@@ -320,7 +328,119 @@ sources/3 = SubResource("TileSetAtlasSource_wsdul")
 sources/4 = SubResource("TileSetAtlasSource_e2axb")
 sources/5 = SubResource("TileSetAtlasSource_6roet")
 
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_hrdek"]
+polygon = PackedVector2Array(-151, -453, 158, -450, 564, -465, 568, 154, 29.500183, 148.76721, -564, 143, -574, -447)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
+size = Vector2(106, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u82d7"]
+atlas = ExtResource("13_wsdul")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tcjcw"]
+atlas = ExtResource("13_wsdul")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_61eop"]
+atlas = ExtResource("13_wsdul")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ll0nm"]
+atlas = ExtResource("13_wsdul")
+region = Rect2(384, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0bbdc"]
+atlas = ExtResource("14_e2axb")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xl8yf"]
+atlas = ExtResource("14_e2axb")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h6ano"]
+atlas = ExtResource("14_e2axb")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gpwe2"]
+atlas = ExtResource("15_6roet")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_70f7l"]
+atlas = ExtResource("15_6roet")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sqcw2"]
+atlas = ExtResource("15_6roet")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mjab8"]
+atlas = ExtResource("15_6roet")
+region = Rect2(384, 0, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tu7lu"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u82d7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tcjcw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_61eop")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ll0nm")
+}],
+"loop": 1,
+"name": &"down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0bbdc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xl8yf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h6ano")
+}],
+"loop": 1,
+"name": &"side",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gpwe2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_70f7l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sqcw2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mjab8")
+}],
+"loop": 1,
+"name": &"up",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_f8it0"]
+radius = 27.018513
+
 [node name="2Ndfloor" type="Node2D" unique_id=1763166709]
+script = ExtResource("1_a10ry")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=744032315]
+offset_left = -855.0
+offset_top = -656.0
+offset_right = 2236.0
+offset_bottom = 1450.0
+color = Color(0, 0, 0, 1)
 
 [node name="CreamMapTiles" type="Sprite2D" parent="." unique_id=1397347052]
 position = Vector2(576.5, 322.5)
@@ -332,7 +452,7 @@ tile_map_data = PackedByteArray("AAAAAAAAAAAAAAAAAAAAAAEAAAAAAAEAAAABAAAAAAABAAA
 tile_set = SubResource("TileSet_g4v7s")
 
 [node name="Battery2" type="Sprite2D" parent="." unique_id=598707775]
-position = Vector2(72, 310)
+position = Vector2(94, 76)
 texture = ExtResource("8_hmch8")
 
 [node name="Key3" type="Sprite2D" parent="." unique_id=1278605314]
@@ -342,3 +462,55 @@ texture = ExtResource("9_2mjx2")
 [node name="Key4" type="Sprite2D" parent="." unique_id=565518302]
 position = Vector2(57, 398)
 texture = ExtResource("9_2mjx2")
+
+[node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=829782462]
+visible = false
+position = Vector2(1, 1)
+color = Color(0.078431375, 0.078431375, 0.12156863, 1)
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="." unique_id=717758124]
+visible = false
+position = Vector2(587, 476.00006)
+scale = Vector2(1.0000002, 1)
+occluder = SubResource("OccluderPolygon2D_hrdek")
+
+[node name="Marker2D" type="Marker2D" parent="." unique_id=1754094263]
+position = Vector2(1030, 398)
+
+[node name="Teleporter" type="Area2D" parent="." unique_id=1748149541]
+collision_layer = 3
+script = ExtResource("11_km2in")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Teleporter" unique_id=1664189389]
+position = Vector2(917, 508)
+shape = SubResource("RectangleShape2D_g4v7s")
+
+[node name="Player" type="Node2D" parent="." unique_id=1920825922]
+position = Vector2(-8, 5)
+
+[node name="Player" type="CharacterBody2D" parent="Player" unique_id=514716868]
+position = Vector2(608, 488)
+script = ExtResource("12_wsdul")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player/Player" unique_id=1713854565]
+position = Vector2(-1.0000088, 6.500004)
+scale = Vector2(1.0781248, 1.1640626)
+sprite_frames = SubResource("SpriteFrames_tu7lu")
+animation = &"down"
+autoplay = "up"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player/Player" unique_id=1634944580]
+position = Vector2(0, -1)
+shape = SubResource("CircleShape2D_f8it0")
+
+[node name="Camera2D" type="Camera2D" parent="Player/Player" unique_id=1333626214]
+position = Vector2(-1, 0)
+
+[node name="Flashlight" type="PointLight2D" parent="Player/Player" unique_id=765825174]
+scale = Vector2(0.111816406, 0.05605468)
+color = Color(1, 0.9490196, 0.8, 1)
+energy = 1.5
+texture = ExtResource("16_f8it0")
+offset = Vector2(1582.9519, 0)
+texture_scale = 6.24
+script = ExtResource("17_e36cs")

@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://373evwplh50w" path="res://MAIN MENU/main_menu.gd" id="1_n28pa"]
 [ext_resource type="Texture2D" uid="uid://vebcfek83ro3" path="res://GAME/sprites/wmremove-transformed.png" id="2_m2akn"]
-[ext_resource type="FontFile" uid="uid://cu187lwcsx46p" path="res://Godot-Fontpack-d244bf6170b399a6d4d26a0d906058ddf2dafdf1/Godot-Fontpack-d244bf6170b399a6d4d26a0d906058ddf2dafdf1/fonts/poco/Poco.ttf" id="3_sxt2w"]
+[ext_resource type="FontFile" uid="uid://cu187lwcsx46p" path="res://fonts/Godot-Fontpack-d244bf6170b399a6d4d26a0d906058ddf2dafdf1/Godot-Fontpack-d244bf6170b399a6d4d26a0d906058ddf2dafdf1/fonts/poco/Poco.ttf" id="3_m2akn"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_57qmd"]
 
@@ -36,7 +36,7 @@ offset_left = 36.0
 offset_top = 403.0
 offset_right = 231.0
 offset_bottom = 450.0
-theme_override_fonts/font = ExtResource("3_sxt2w")
+theme_override_fonts/font = ExtResource("3_m2akn")
 theme_override_font_sizes/font_size = 40
 theme_override_styles/normal = SubResource("StyleBoxEmpty_57qmd")
 text = "SETTINGS
@@ -54,7 +54,7 @@ offset_left = 36.0
 offset_top = 314.0
 offset_right = 231.0
 offset_bottom = 362.0
-theme_override_fonts/font = ExtResource("3_sxt2w")
+theme_override_fonts/font = ExtResource("3_m2akn")
 theme_override_font_sizes/font_size = 40
 theme_override_styles/normal = SubResource("StyleBoxEmpty_yf5fn")
 text = "START
@@ -67,7 +67,7 @@ offset_top = 11.0
 offset_right = 774.0
 offset_bottom = 254.0
 theme_override_colors/font_outline_color = Color(0.5595232, 1.2754649e-06, 3.3691526e-07, 1)
-theme_override_fonts/font = ExtResource("3_sxt2w")
+theme_override_fonts/font = ExtResource("3_m2akn")
 theme_override_font_sizes/font_size = 100
 text = "MAIN HALL
 "
@@ -81,10 +81,8 @@ offset_top = 125.0
 offset_right = 744.0
 offset_bottom = 342.0
 theme_override_colors/font_outline_color = Color(0.40050432, 0.011333661, 2.4065375e-08, 1)
-theme_override_fonts/font = ExtResource("3_sxt2w")
 theme_override_font_sizes/font_size = 55
 text = "ᜋᜁᜈ᜕ ᜑᜎ᜕ᜎ᜕
 "
 horizontal_alignment = 1
 vertical_alignment = 1
-autowrap_mode = 2
