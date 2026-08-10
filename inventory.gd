@@ -1,5 +1,4 @@
 extends Node
-
 signal inventory_changed
 
 class Slot:
@@ -7,7 +6,7 @@ class Slot:
 	var quantity: int = 0
 
 var slots: Array[Slot] = []
-const SLOT_COUNT := 20
+const SLOT_COUNT := 3
 
 func _ready() -> void:
 	for i in SLOT_COUNT:

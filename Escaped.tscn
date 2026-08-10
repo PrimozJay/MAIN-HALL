@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://hlm4q6fhohxb"]
+
+[node name="Escaped" type="Control" unique_id=1323362879]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=507881946]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 652.0
+color = Color(0, 0, 0, 1)
+
+[node name="Label" type="Label" parent="ColorRect" unique_id=601277002]
+layout_mode = 0
+offset_right = 1151.0
+offset_bottom = 635.0
+theme_override_font_sizes/font_size = 30
+text = "NAKA  TAKAS KA DING BADING KA
+"
+horizontal_alignment = 1
+vertical_alignment = 1

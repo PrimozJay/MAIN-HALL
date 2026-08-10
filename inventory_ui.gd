@@ -1,5 +1,4 @@
 extends Control
-
 @onready var slots_ui: Array[Sprite2D] = [$Slot1, $Slot2, $Slot3]
 
 func _ready() -> void:

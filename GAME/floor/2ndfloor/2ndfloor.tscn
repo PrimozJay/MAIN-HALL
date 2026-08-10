@@ -334,7 +334,40 @@ size = Vector2(29, 17.5)
 polygon = PackedVector2Array(-151, -453, 158, -450, 564, -465, 568, 154, 29.500183, 148.76721, -564, 143, -574, -447)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
-size = Vector2(106, 24)
+size = Vector2(106, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eustb"]
+size = Vector2(40.250004, 1120)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wsdul"]
+size = Vector2(40.250004, 453)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e2axb"]
+size = Vector2(16.124819, 357.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6roet"]
+size = Vector2(642.125, 30.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tu7lu"]
+size = Vector2(173.06253, 30.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f8it0"]
+size = Vector2(213.53123, 30.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e36cs"]
+size = Vector2(227.76563, 30.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4vh7n"]
+size = Vector2(251.88278, 33.25)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wp4hx"]
+size = Vector2(24.999996, 114)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u2ckm"]
+size = Vector2(22.999931, 431)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3cudl"]
+size = Vector2(631.0625, 30.5)
 
 [node name="2Ndfloor" type="Node2D" unique_id=1763166709]
 script = ExtResource("1_a10ry")
@@ -414,3 +447,52 @@ position = Vector2(917, 508)
 shape = SubResource("RectangleShape2D_g4v7s")
 
 [node name="Player" parent="." unique_id=1933232573 instance=ExtResource("13_hrdek")]
+position = Vector2(436, -86)
+
+[node name="Wall" type="StaticBody2D" parent="." unique_id=1637484526]
+position = Vector2(583, 21.249998)
+rotation = 1.5707964
+collision_layer = 255
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Wall" unique_id=910578522]
+shape = SubResource("RectangleShape2D_eustb")
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="Wall" unique_id=205807885]
+position = Vector2(603.75, 332.49997)
+shape = SubResource("RectangleShape2D_wsdul")
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="Wall" unique_id=1722537946]
+position = Vector2(621.8123, -393.25)
+shape = SubResource("RectangleShape2D_e2axb")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Wall" unique_id=571741747]
+position = Vector2(299.68753, 569.25)
+shape = SubResource("RectangleShape2D_6roet")
+
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="Wall" unique_id=355049695]
+position = Vector2(491.28128, 107.99997)
+shape = SubResource("RectangleShape2D_tu7lu")
+
+[node name="CollisionShape2D10" type="CollisionShape2D" parent="Wall" unique_id=983122273]
+position = Vector2(131.9844, 110)
+shape = SubResource("RectangleShape2D_f8it0")
+
+[node name="CollisionShape2D11" type="CollisionShape2D" parent="Wall" unique_id=2142456198]
+position = Vector2(134.8672, -248)
+shape = SubResource("RectangleShape2D_e36cs")
+
+[node name="CollisionShape2D12" type="CollisionShape2D" parent="Wall" unique_id=1400487102]
+position = Vector2(457.8086, -262.375)
+shape = SubResource("RectangleShape2D_4vh7n")
+
+[node name="CollisionShape2D13" type="CollisionShape2D" parent="Wall" unique_id=882390333]
+position = Vector2(456.25, -335)
+shape = SubResource("RectangleShape2D_wp4hx")
+
+[node name="CollisionShape2D9" type="CollisionShape2D" parent="Wall" unique_id=2113709578]
+position = Vector2(328.2501, 338.5)
+shape = SubResource("RectangleShape2D_u2ckm")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="Wall" unique_id=1542807305]
+position = Vector2(306.21872, -557)
+shape = SubResource("RectangleShape2D_3cudl")

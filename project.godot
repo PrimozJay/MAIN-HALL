@@ -21,6 +21,8 @@ Global="*uid://tmfpltu0cqaj"
 TransitionManager="*uid://bvaj8lm784uq8"
 Inventory="*uid://c12oehebjjbh1"
 InteractPrompt="*uid://bdlqn575woerj"
+KeyManager="*uid://bye0urj8wh1qk"
+CollectedItems="*uid://blnbx0jmi2w2a"
 
 [display]
 

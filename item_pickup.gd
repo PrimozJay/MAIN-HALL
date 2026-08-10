@@ -17,14 +17,15 @@ func _ready() -> void:
 		push_error("ItemPickup '%s' parent is not a Sprite2D" % get_parent().name)
 		return
 
-	sprite.texture = item_data.icon
+	# If this item's ID was already collected, remove immediately
+	if item_data.id != "" and CollectedItems.is_collected(item_data.id):
+		get_parent().queue_free()
+		return
 
+	sprite.texture = item_data.icon
 	prompt_label = get_tree().get_first_node_in_group("interact_prompt")
 	if prompt_label:
 		prompt_label.visible = false
-	else:
-		print(prompt_label)
-
 	body_entered.connect(_on_body_entered)
 	body_exited.connect(_on_body_exited)
 
@@ -44,6 +45,8 @@ func _unhandled_input(event: InputEvent) -> void:
 
 func _pick_up() -> void:
 	if Inventory.add_item(item_data, quantity):
+		if item_data.id != "":
+			CollectedItems.mark_collected(item_data.id)
 		if prompt_label:
 			prompt_label.visible = false
 		get_parent().queue_free()

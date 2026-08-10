@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://c8jj44s32ay0m"]
+
+[ext_resource type="Texture2D" uid="uid://b2my24vthadjl" path="res://GAME/map layer/key_32.png" id="1_cjmbx"]
+[ext_resource type="Script" uid="uid://cstcoclhq05j5" path="res://GAME/item_data.gd" id="2_1jyt3"]
+
+[resource]
+script = ExtResource("2_1jyt3")
+id = "k00005"
+item_name = "Key5"
+icon = ExtResource("1_cjmbx")
+metadata/_custom_type_script = "uid://cstcoclhq05j5"

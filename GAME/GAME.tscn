@@ -19,10 +19,14 @@
 [ext_resource type="PackedScene" uid="uid://byque4w54oowj" path="res://Player/player.tscn" id="23_8ws6v"]
 [ext_resource type="Texture2D" uid="uid://bilcuhg2g5ekd" path="res://GAME/map layer/jumpscare_face (1).png" id="23_tcjcw"]
 [ext_resource type="AudioStream" uid="uid://ccdp7ac7oiwg0" path="res://sounds/jumpscare-sound_L63DbPEO.mp3" id="24_61eop"]
+[ext_resource type="Resource" uid="uid://b1e8mu1g3dx4p" path="res://Items/key1.tres" id="25_ll0nm"]
+[ext_resource type="Script" uid="uid://bdpv6075kdv46" path="res://item_pickup.gd" id="25_xl8yf"]
+[ext_resource type="Resource" uid="uid://b74pvr3dfp7vl" path="res://Items/Key2.tres" id="26_0bbdc"]
 [ext_resource type="Texture2D" uid="uid://dqofffjukuaav" path="res://GAME/sprites/monster_walk_sheet_4x.png" id="26_h6ano"]
 [ext_resource type="Script" uid="uid://2dcqanngmji0" path="res://GAME/teleporter.gd" id="26_xl8yf"]
 [ext_resource type="Texture2D" uid="uid://cjkau08x3ggpm" path="res://GAME/sprites/image-removebg-preview (1).png" id="27_gpwe2"]
 [ext_resource type="Texture2D" uid="uid://2l44roatmu73" path="res://GAME/sprites/monster_walk_up_sheet_4x.png" id="28_70f7l"]
+[ext_resource type="Script" uid="uid://di10gvem6xmkg" path="res://GAME/Door.gd" id="29_xl8yf"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_8ws6v"]
 vertices = PackedVector2Array(15, 15, -15, 15, -15, -15, 15, -15)
@@ -475,7 +479,37 @@ polygon = PackedVector2Array(-151, -453, 158, -450, 564, -465, 568, 154, 29.5001
 size = Vector2(33, 654.75)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_21cii"]
-size = Vector2(40.250004, 1118)
+size = Vector2(40.250004, 1120)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0bbdc"]
+size = Vector2(40.250004, 203.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xl8yf"]
+size = Vector2(40.250004, 174.875)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h6ano"]
+size = Vector2(275, 35)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gpwe2"]
+size = Vector2(107.5, 35)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_adask"]
+size = Vector2(82.75, 99.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rfaw2"]
+size = Vector2(141.375, 56)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iiene"]
+size = Vector2(25, 91.75)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_70f7l"]
+size = Vector2(282.5, 35)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sqcw2"]
+size = Vector2(26, 87.49997)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p0ps2"]
+size = Vector2(26, 84.749985)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0opqf"]
 size = Vector2(22, 1118)
@@ -591,6 +625,15 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_g4v7s"]
 radius = 23.021729
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_xl8yf"]
+load_path = "res://.godot/imported/key_32.png-d0d9b5e0e22fd7ce0bffd5a679ac9f30.ctex"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mjab8"]
+size = Vector2(29, 17.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d0u6y"]
+size = Vector2(71, 40.5)
+
 [node name="Game" type="Node2D" unique_id=771411987]
 script = ExtResource("1_61eop")
 
@@ -609,7 +652,7 @@ position = Vector2(1, 1)
 color = Color(0.078431375, 0.078431375, 0.12156863, 1)
 
 [node name="CreamMapTiles" type="Sprite2D" parent="MAP" unique_id=693587364]
-position = Vector2(587.99994, 327.75)
+position = Vector2(588, 328)
 scale = Vector2(0.98003477, 0.7884115)
 texture = ExtResource("1_8rc2e")
 
@@ -642,6 +685,56 @@ shape = SubResource("RectangleShape2D_g4v7s")
 position = Vector2(583, 21.249998)
 rotation = 1.5707964
 shape = SubResource("RectangleShape2D_21cii")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="MAP/Wall" unique_id=763788552]
+position = Vector2(99.25, 153)
+rotation = 1.5707964
+shape = SubResource("RectangleShape2D_0bbdc")
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="MAP/Wall" unique_id=1822965723]
+position = Vector2(361.125, 153)
+rotation = 1.5707964
+shape = SubResource("RectangleShape2D_xl8yf")
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="MAP/Wall" unique_id=297941834]
+position = Vector2(464.5, 186.5)
+rotation = 1.5707964
+shape = SubResource("RectangleShape2D_h6ano")
+
+[node name="CollisionShape2D11" type="CollisionShape2D" parent="MAP/Wall" unique_id=2082498646]
+position = Vector2(467, 504.75)
+rotation = 1.5707964
+shape = SubResource("RectangleShape2D_gpwe2")
+
+[node name="CollisionShape2D12" type="CollisionShape2D" parent="MAP/Wall" unique_id=85972287]
+position = Vector2(786.25, 519.375)
+rotation = 1.5707964
+shape = SubResource("RectangleShape2D_adask")
+
+[node name="CollisionShape2D14" type="CollisionShape2D" parent="MAP/Wall" unique_id=349587446]
+position = Vector2(1111, 556.3125)
+rotation = 1.5707964
+shape = SubResource("RectangleShape2D_rfaw2")
+
+[node name="CollisionShape2D13" type="CollisionShape2D" parent="MAP/Wall" unique_id=603097261]
+position = Vector2(882.125, 490.5)
+rotation = 1.5707964
+shape = SubResource("RectangleShape2D_iiene")
+
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="MAP/Wall" unique_id=2012515105]
+position = Vector2(737, 184.75)
+rotation = 1.5707964
+shape = SubResource("RectangleShape2D_70f7l")
+
+[node name="CollisionShape2D9" type="CollisionShape2D" parent="MAP/Wall" unique_id=1166388889]
+position = Vector2(526.25, 345)
+rotation = 1.5707964
+shape = SubResource("RectangleShape2D_sqcw2")
+
+[node name="CollisionShape2D10" type="CollisionShape2D" parent="MAP/Wall" unique_id=971983597]
+position = Vector2(675.625, 346)
+rotation = 1.5707964
+shape = SubResource("RectangleShape2D_p0ps2")
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="MAP/Wall" unique_id=1488975460]
 position = Vector2(593, 648)
@@ -687,6 +780,7 @@ wait_time = 2.0
 one_shot = true
 
 [node name="Player" parent="." unique_id=1933232573 instance=ExtResource("23_8ws6v")]
+position = Vector2(-3, -84)
 
 [node name="Enemy" type="CharacterBody2D" parent="." unique_id=1263321689 groups=["Player"]]
 script = ExtResource("20_8ws6v")
@@ -702,3 +796,42 @@ position = Vector2(75, 517)
 shape = SubResource("CircleShape2D_g4v7s")
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="Enemy" unique_id=1077354940]
+
+[node name="Key1" type="Sprite2D" parent="." unique_id=410193537]
+position = Vector2(595, 189)
+texture = SubResource("CompressedTexture2D_xl8yf")
+
+[node name="Area2D" type="Area2D" parent="Key1" unique_id=752586075]
+script = ExtResource("25_xl8yf")
+item_data = ExtResource("25_ll0nm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Key1/Area2D" unique_id=407025468]
+position = Vector2(0, -2)
+shape = SubResource("RectangleShape2D_mjab8")
+
+[node name="Key2" type="Sprite2D" parent="." unique_id=1473166309]
+position = Vector2(60, 379)
+texture = SubResource("CompressedTexture2D_xl8yf")
+
+[node name="Area2D" type="Area2D" parent="Key2" unique_id=1970029349]
+script = ExtResource("25_xl8yf")
+item_data = ExtResource("26_0bbdc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Key2/Area2D" unique_id=995296169]
+position = Vector2(0, -2)
+shape = SubResource("RectangleShape2D_mjab8")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=2129027158]
+script = ExtResource("29_xl8yf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=955442363]
+position = Vector2(509, 641.25)
+shape = SubResource("RectangleShape2D_d0u6y")
+
+[node name="PromptLabel" type="Label" parent="Area2D" unique_id=839118811]
+offset_left = 479.0
+offset_top = 662.0
+offset_right = 537.0
+offset_bottom = 685.0
+horizontal_alignment = 1
+vertical_alignment = 1
