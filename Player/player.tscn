@@ -109,6 +109,7 @@ animations = [{
 radius = 27.018513
 
 [node name="PlayerNode" type="Node2D" unique_id=1933232573]
+visible = false
 
 [node name="Player" type="CharacterBody2D" parent="." unique_id=1399997762 groups=["Player"]]
 position = Vector2(608, 488)
@@ -139,8 +140,10 @@ texture_scale = 6.24
 script = ExtResource("6_apopc")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1778804220]
+visible = false
 
 [node name="InventoryPanel3Slot" type="Sprite2D" parent="CanvasLayer" unique_id=379657563]
+visible = false
 position = Vector2(609.25006, 603)
 scale = Vector2(0.561756, 0.36666685)
 texture = ExtResource("7_vtle1")
@@ -168,6 +171,7 @@ scale = Vector2(4.512692, 4.681816)
 
 [node name="interact_prompt" type="Label" parent="CanvasLayer" unique_id=514214889]
 unique_name_in_owner = true
+visible = false
 offset_left = 543.0
 offset_top = 532.0
 offset_right = 683.0
